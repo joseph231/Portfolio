@@ -1,29 +1,44 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
-/* ─── DESIGN TOKENS ─────────────────────────────────── */
+/* ─── SOC DARK THEME TOKENS ─────────────────────────── */
+/* Inspired by Security Operations Centers & Network     */
+/* Monitoring dashboards. Cyan = network/cyber identity. */
 @theme {
-  /* Brand */
-  --color-brand-blue:        #0F52BA;
-  --color-brand-blue-light:  #EBF2FF;
-  --color-brand-blue-dark:   #0A3D8F;
+  /* Core backgrounds */
+  --soc-base:        #0B1120;
+  --soc-surface:     #111827;
+  --soc-card:        #1A2235;
+  --soc-card-hover:  #1F2A40;
 
-  /* Neutrals */
-  --color-ink:               #0D1117;
-  --color-ink-secondary:     #6E7681;
-  --color-ink-muted:         #9CA3AF;
-  --color-surface:           #F7F8FA;
-  --color-surface-card:      #FFFFFF;
-  --color-border:            #E1E4E8;
-  --color-border-focus:      #0F52BA;
+  /* Accent — cyan is the signature of network/cyber tools */
+  --soc-cyan:        #00D4FF;
+  --soc-cyan-dim:    rgba(0, 212, 255, 0.12);
+  --soc-cyan-border: rgba(0, 212, 255, 0.18);
+  --soc-blue:        #0EA5E9;
+  --soc-blue-dim:    rgba(14, 165, 233, 0.12);
+
+  /* Text */
+  --soc-text:        #E2E8F0;
+  --soc-text-muted:  #94A3B8;
+  --soc-text-dim:    #64748B;
+
+  /* Borders */
+  --soc-border:      rgba(255, 255, 255, 0.07);
+  --soc-border-cyan: rgba(0, 212, 255, 0.18);
 
   /* Status */
-  --color-success:           #065F46;
-  --color-success-bg:        #ECFDF5;
-  --color-warning:           #B45309;
-  --color-warning-bg:        #FFF8E5;
+  --soc-green:       #10B981;
+  --soc-green-dim:   rgba(16, 185, 129, 0.12);
+  --soc-amber:       #F59E0B;
+  --soc-amber-dim:   rgba(245, 158, 11, 0.12);
 
-  /* Typography */
+  /* Shadows */
+  --soc-shadow:      0 4px 24px rgba(0, 0, 0, 0.4);
+  --soc-glow-cyan:   0 0 20px rgba(0, 212, 255, 0.15);
+  --soc-glow-blue:   0 8px 32px rgba(14, 165, 233, 0.2);
+
+  /* Typography — keeping existing fonts */
   --font-display:   "Syne", "Helvetica Neue", sans-serif;
   --font-body:      "DM Sans", "Helvetica Neue", sans-serif;
 
@@ -31,10 +46,24 @@
   --tracking-label:    0.18em;
   --tracking-eyebrow:  0.28em;
 
-  /* Shadows */
-  --shadow-card:       0 2px 12px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 8px 32px rgba(15, 82, 186, 0.10);
-  --shadow-focus:      0 0 0 3px rgba(15, 82, 186, 0.12);
+  /* Legacy aliases so old code doesn't break */
+  --color-brand-blue:        #0EA5E9;
+  --color-brand-blue-light:  rgba(14,165,233,0.12);
+  --color-brand-blue-dark:   #0284C7;
+  --color-ink:               #E2E8F0;
+  --color-ink-secondary:     #94A3B8;
+  --color-ink-muted:         #64748B;
+  --color-surface:           #0B1120;
+  --color-surface-card:      #1A2235;
+  --color-border:            rgba(255,255,255,0.07);
+  --color-border-focus:      #00D4FF;
+  --color-success:           #10B981;
+  --color-success-bg:        rgba(16,185,129,0.12);
+  --color-warning:           #F59E0B;
+  --color-warning-bg:        rgba(245,158,11,0.12);
+  --shadow-card:             0 4px 24px rgba(0,0,0,0.4);
+  --shadow-card-hover:       0 8px 32px rgba(0,212,255,0.12);
+  --shadow-focus:            0 0 0 3px rgba(0,212,255,0.2);
 }
 
 /* ─── ANIMATIONS ────────────────────────────────────── */
@@ -78,8 +107,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-surface);
-  color: var(--color-ink);
+  background-color: #0B1120;
+  color: #E2E8F0;
   overflow-x: hidden;
 }
 
@@ -417,4 +446,13 @@ textarea.input-field {
   color: var(--color-brand-blue);
   background: var(--color-brand-blue-light);
   transform: translateY(-1px);
+}
+
+/* ─── RESPONSIVE UTILITIES ──────────────────────────────────────────────────── */
+.hide-on-mobile  { display: flex; }
+.show-on-mobile  { display: none; }
+
+@media (max-width: 768px) {
+  .hide-on-mobile { display: none !important; }
+  .show-on-mobile { display: flex !important; }
 }

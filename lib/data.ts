@@ -132,29 +132,42 @@ export const EXPERIENCE = [
 ];
 
 // ─── EDUCATION & CERTIFICATIONS ───────────────────────────────────────────────
+// ─── OFFICIAL CERTIFICATIONS (2) ─────────────────────────────────────────────
 export const CERTIFICATIONS = [
   {
-    name:   "IBM Cybersecurity Analyst Professional Certificate",
-    by:     "IBM / Coursera",
-    status: "in-progress" as const,
-    year:   "2025",
+    name:       "IBM Cybersecurity Analyst Professional Certificate",
+    by:         "University of the People",
+    status:     "in-progress" as const,
+    year:       "2025",
+    image_url:  null,           // ← upload cert image to Supabase, paste URL here
+    verify_url: "PLACEHOLDER",  // ← paste your University of the People verification link
   },
   {
-    name:   "Cisco CCNA",
-    by:     "Cisco Networking Academy",
-    status: "completed" as const,
-    year:   "2021",
+    name:       "Cisco CCNA — Networking Fundamentals",
+    by:         "Udemy",
+    status:     "completed" as const,
+    year:       "2021",
+    image_url:  null,           // ← upload cert image to Supabase, paste URL here
+    verify_url: "PLACEHOLDER",  // ← paste your Udemy certificate link
+  },
+];
+
+// ─── LEARNING & DEVELOPMENT (2) ───────────────────────────────────────────────
+export const LEARNING = [
+  {
+    icon:        "📺",
+    name:        "CompTIA Network+ — Self Study",
+    description: "Deep-dived into networking concepts, subnetting, protocols and troubleshooting through structured YouTube learning and hands-on lab practice.",
+    resource:    "YouTube",
+    resource_url: "PLACEHOLDER", // ← paste the YouTube channel/playlist link
+    tags:        ["TCP/IP", "Subnetting", "DNS", "DHCP", "Protocols"],
   },
   {
-    name:   "CompTIA Network+",
-    by:     "CompTIA",
-    status: "completed" as const,
-    year:   "2020",
-  },
-  {
-    name:   "Next.js / Full-Stack Development",
-    by:     "Vercel / Self-Study",
-    status: "completed" as const,
-    year:   "2023",
+    icon:        "💻",
+    name:        "Next.js & Full-Stack Web Development",
+    description: "Mastered modern full-stack development through official documentation, hands-on projects, and building production applications from scratch.",
+    resource:    "Vercel Docs + Practice",
+    resource_url: "PLACEHOLDER", // ← paste e.g. https://nextjs.org/docs or a YouTube link
+    tags:        ["Next.js", "React", "TypeScript", "Supabase", "Tailwind"],
   },
 ];

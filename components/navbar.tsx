@@ -67,9 +67,9 @@ export default function Navbar() {
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
         transition: "all 0.3s ease",
-        backgroundColor: scrolled ? "rgba(255,255,255,0.96)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
+        backgroundColor: scrolled ? "rgba(11,17,32,0.97)" : "transparent",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(0,212,255,0.1)" : "1px solid transparent",
       }}>
         <div className="site-wrap" style={{
           display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -79,7 +79,7 @@ export default function Navbar() {
           <Link href="/">
             <div style={{
               fontFamily: "var(--font-display)", fontWeight: 800,
-              fontSize: "1.1rem", letterSpacing: "-0.02em", color: "var(--color-ink)",
+              fontSize: "1.1rem", letterSpacing: "-0.02em", color: "#E2E8F0",
               display: "flex", alignItems: "center",
             }}>
               Joseph<span style={{ color: "var(--color-brand-blue)", marginLeft: "0.25rem" }}>Abia</span>
@@ -92,7 +92,7 @@ export default function Navbar() {
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="nav-link"
                 style={{
-                  color: pathname === link.href ? "var(--color-brand-blue)" : "var(--color-ink-secondary)",
+                  color: pathname === link.href ? "#00D4FF" : "#94A3B8",
                   fontWeight: pathname === link.href ? 600 : 400,
                 }}>
                 {link.label}

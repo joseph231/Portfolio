@@ -27,7 +27,7 @@ const WhatsAppIcon = () => (
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer style={{ borderTop: "1px solid var(--color-border)", backgroundColor: "var(--color-surface-card)" }}>
+    <footer style={{ borderTop: "1px solid rgba(0,212,255,0.1)", backgroundColor: "#111827" }}>
       <div className="site-wrap" style={{ padding: "3.5rem 1.5rem 2.5rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "2rem", alignItems: "flex-start" }}>
           <div>
@@ -35,7 +35,7 @@ export default function Footer() {
               Joseph <span style={{ color: "var(--color-brand-blue)" }}>Abia</span>
             </div>
             <p style={{ fontSize: "0.85rem", color: "var(--color-ink-secondary)", maxWidth: "340px", lineHeight: 1.7, fontWeight: 300 }}>
-              Network Architect · Web Developer · IT Support Specialist · Cybersecurity Analyst (in progress)
+              Network Architect · Web Developer · Cybersecurity Analyst (in progress)
             </p>
             {PERSON.available && (
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "1.25rem", fontSize: "0.75rem", color: "var(--color-ink-secondary)" }}>
@@ -58,7 +58,10 @@ export default function Footer() {
       </div>
       <div style={{ borderTop: "1px solid var(--color-border)" }}>
         <div className="site-wrap" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.25rem 1.5rem", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ fontSize: "0.72rem", color: "var(--color-ink-muted)" }}>© {year} Joseph Abia. All rights reserved.</p>
+          <p style={{ fontSize: "0.72rem", color: "var(--color-ink-muted)" }}>
+            © {year} Joseph Abia. All rights reserved.{" "}
+            <a href="/admin/projects" style={{ color: "transparent", userSelect: "none" }}>·</a>
+          </p>
           <div style={{ display: "flex", gap: "0.5rem" }}>
             <a href={SOCIALS.linkedin}  target="_blank" rel="noopener noreferrer" className="social-icon" title="LinkedIn"><LinkedInIcon /></a>
             <a href={SOCIALS.github}    target="_blank" rel="noopener noreferrer" className="social-icon" title="GitHub"><GitHubIcon /></a>
