@@ -154,20 +154,11 @@ export default function ProjectsPage() {
               <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.25rem", color: T.text, marginBottom: "0.625rem" }}>
                 No projects yet
               </h3>
-              <p style={{ fontSize: "0.875rem", color: T.muted, marginBottom: "2rem" }}>
+              <p style={{ fontSize: "0.875rem", color: T.muted }}>
                 {activeFilter === "All"
-                  ? "Add your first project from the admin panel."
-                  : `No ${activeFilter} projects added yet.`}
+                  ? "Projects are being added — check back soon."
+                  : `No ${activeFilter} projects added yet. Check back soon.`}
               </p>
-              <a href="/admin/projects" style={{
-                display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                background: T.cyan, color: "#0B1120",
-                fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 700,
-                letterSpacing: "0.15em", textTransform: "uppercase",
-                padding: "0.875rem 2rem", borderRadius: "2px",
-              }}>
-                + Add Project
-              </a>
             </div>
           )}
 
@@ -492,6 +483,10 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
   );
 }
 
+const T_amber = "rgba(245,158,11,0.12)";
+const T_amberDim = "rgba(245,158,11,0.12)";
+// suppress unused warning
+void T_amber; void T_amberDim;
 
 function ExternalIcon() {
   return <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>;
